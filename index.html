@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minecraft Clicker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Top News Bar -->
+        <div class="news-bar">
+            <span class="news-text" id="newsText">Welcome to Minecraft Clicker! Start mining to earn blocks...</span>
+        </div>
+
+        <!-- Main Game Area -->
+        <div class="game-wrapper">
+            <!-- Left Panel: Big Click Area -->
+            <div class="left-panel">
+                <div class="stats-display">
+                    <div class="total-blocks" id="totalBlocks">0</div>
+                    <div class="blocks-label">BLOCKS</div>
+                    <div class="bps-display" id="bpsDisplay">0 blocks/sec</div>
+                </div>
+                
+                <div class="clicker-area">
+                    <div class="block" id="mainBlock">
+                        <div class="block-top"></div>
+                        <div class="block-side"></div>
+                        <div class="block-front"></div>
+                    </div>
+                    <div class="click-effect" id="clickEffect"></div>
+                </div>
+            </div>
+
+            <!-- Right Panel: Buildings & Store -->
+            <div class="right-panel">
+                <!-- Upgrades Section -->
+                <div class="upgrades-section">
+                    <div class="section-title">UPGRADES</div>
+                    <div class="upgrades-grid" id="upgradesGrid"></div>
+                </div>
+
+                <!-- Buildings Section -->
+                <div class="buildings-section">
+                    <div class="section-title">BUILDINGS</div>
+                    <div class="buildings-list" id="buildingsList"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Options Menu -->
+        <div class="options-menu" id="optionsMenu">
+            <button class="options-btn" id="optionsToggle">⚙ OPTIONS</button>
+            <div class="options-panel" id="optionsPanel" style="display: none;">
+                <div class="panel-title">OPTIONS</div>
+                <button class="panel-btn" id="exportBtn">📋 Export Save</button>
+                <button class="panel-btn" id="saveToFileBtn">💾 Save to File</button>
+                <button class="panel-btn" id="loadFromFileBtn">📂 Load from File</button>
+                <button class="panel-btn" id="importBtn">📝 Load from String</button>
+                <button class="panel-btn danger" id="newGameBtn">⚠ New Game</button>
+                <input type="file" id="fileInput" accept=".txt" style="display: none;">
+                
+                <div class="export-area" id="exportArea" style="display: none;">
+                    <div class="area-title">Save String (copy to save):</div>
+                    <textarea id="saveText" readonly></textarea>
+                    <button class="panel-btn" id="copyBtn">📋 Copy to Clipboard</button>
+                </div>
+                
+                <div class="import-area" id="importArea" style="display: none;">
+                    <div class="area-title">Paste Save String:</div>
+                    <textarea id="loadText"></textarea>
+                    <button class="panel-btn" id="loadStrBtn">Load from String</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
